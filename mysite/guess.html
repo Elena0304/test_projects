@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<meta charset="utf-8">
+		<script >
+		function Guess ()
+		{
+			var rN = Math.floor(Math.random()*5)+1;
+		
+			var uN = -1;
+			var count = 0;
+
+			while (rN != uN)
+			{
+				uN = parseInt(prompt("Угадай задуманное число"));
+				count++;
+				if(uN > rN) {alert("Число больше загаданного"); }
+				if(uN < rN) {alert("Число меньше загаданного"); }
+			}
+			alert("Ты - чемпион! Кол-во попыток: "+count);
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Игра Угадай-ка!</h1>
+		<p>В этой игре вам необходимо угадать случайное число, загаданное компьютером!</p>
+		<p>Чтобы начать игру, нажмите на кнопку <p>
+		<p>
+			<input type ="button"
+					value = "Начать игру"
+					onclick = "Guess()">
+		</p>
+
+	</body>
+</html>	
