@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<script >
+		function Game()
+		{
+			var rN = Math.floor(Math.random()*5)+1;
+			
+			var uN = -1;
+			var count1 = 0;
+			var count2 = 0;
+
+			var user = 2;
+			while ( rN != uN)
+			{
+				user = user == 1 ? 2 : 1;
+
+				if(user==1) count1++; else count2++;
+
+				uN = prompt(user + " игрок, угадывай число");
+
+				if (uN == "q") break;
+				if (uN == "god") alert(rN);
+
+				uN = parseInt(uN);
+
+				if(uN > rN) {alert("Число больше загаданного"); }
+				if(uN < rN) {alert("Число меньше загаданного"); }
+			}
+		if (uN != "q")
+			alert("Победил " +user + " игрок! Загаданное число: " +rN +". Кол-во попыток: "+ (user==1?count1:count2));
+		}
+
+		</script>
+	</head>
+	<body>
+		<h1>Игра Угадай-ка для двух игроков</h1>
+		<p>В этой игре вам необходимо угадать случайное число, загаданное компьютером!</p>
+		<p>Чтобы начать игру, нажмите на кнопку <p>
+		<p>
+			<input type ="button"
+					value = "Начать игру"
+					onclick = "Game()">
+		</p>
+
+	</body>
+</html>	
